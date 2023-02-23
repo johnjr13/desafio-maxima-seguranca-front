@@ -6,20 +6,16 @@
   </ng-container>
 
   <!-- CPF Column -->
-  <ng-container matColumnDef="category">
+  <ng-container matColumnDef="cpf">
     <mat-header-cell *matHeaderCellDef>CPF</mat-header-cell>
-    <mat-cell *matCellDef="let client">{{ client.category }}
-      <mat-icon aria-hidden="false" aria-label="Categoria do Curso">{{ client.category | category}}</mat-icon>
-    </mat-cell>
+    <mat-cell *matCellDef="let client">{{ client.cpf }}</mat-cell>
   </ng-container>
 
-   <!-- Idade Column
-   <ng-container matColumnDef="#">
+  <!-- Idade Column -->
+  <ng-container matColumnDef="idade">
     <mat-header-cell *matHeaderCellDef>Idade</mat-header-cell>
-    <mat-cell *matCellDef="let client">{{ client.category }}
-      <mat-icon aria-hidden="false" aria-label="Categoria do Curso">{{ client.category | category}}</mat-icon>
-    </mat-cell>
-  </ng-container>-->
+    <mat-cell *matCellDef="let client">{{ client.idade }}</mat-cell>
+  </ng-container>
 
    <!-- Actions Column -->
    <ng-container matColumnDef="actions">

@@ -17,7 +17,7 @@ export class ClientsComponent implements OnInit {
 
   clients$: Observable<Client[]> | null = null;
 
-  displayedColumns = ['name', 'category', 'actions'];
+  displayedColumns = ['name', 'cpf', 'idade', 'actions'];
 
 
   constructor(
@@ -59,20 +59,20 @@ export class ClientsComponent implements OnInit {
   onRemove(client: Client){
 
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data: 'Tem certeza que deseja remover esse curso?',
+      data: 'Tem certeza que deseja remover esse cliente?',
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if(result){
         this.refresh();
         this.clientsService.remove(client._id).subscribe(() =>{
-          this.snackBar.open('Curso removido com sucesso!','', {
+          this.snackBar.open('Cliente removido com sucesso!','', {
             duration: 5000,
             verticalPosition: 'top',
             horizontalPosition: 'center'
           })
         },
-        () => this.onError('Erro ao tentar remover curso!')
+        () => this.onError('Erro ao tentar remover cliente!')
         );
       }
     });

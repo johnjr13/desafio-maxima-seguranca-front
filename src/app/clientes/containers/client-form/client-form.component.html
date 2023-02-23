@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-toolbar color="primary">Detalhes do curso</mat-toolbar>
+  <mat-toolbar color="primary">Atualizar dados do Cliente</mat-toolbar>
 
     <mat-card-content>
       <form [formGroup]="form" class="min-width">
@@ -9,15 +9,21 @@
             getErrorMessage("name")
           }}</mat-error>
         </mat-form-field>
-
+        <!--CPF-->
         <mat-form-field class="full-width">
-          <mat-label>Categoria</mat-label>
-          <mat-select formControlName="category">
-            <mat-option value="null"></mat-option>
-            <mat-option value="front-end">Programador-Back</mat-option>
-            <mat-option value="back-end">Programador-Front</mat-option>
-          </mat-select>
+          <input matInput placeholder="CPF" formControlName="cpf">
+          <mat-error *ngIf="form.get('cpf')?.invalid">{{
+            getErrorMessage("cpf")
+          }}</mat-error>
         </mat-form-field>
+        <!--Idade-->
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Idade" formControlName="idade">
+          <mat-error *ngIf="form.get('idade')?.invalid">{{
+            getErrorMessage("idade")
+          }}</mat-error>
+        </mat-form-field>
+
       </form>
     </mat-card-content>
 

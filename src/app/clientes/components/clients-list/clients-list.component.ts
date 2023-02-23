@@ -13,7 +13,7 @@ export class ClientsListComponent implements OnInit {
  @Output() edit = new EventEmitter(false);
  @Output() remove = new EventEmitter(false);
 
- readonly displayedColumns = ['name', 'category', 'actions'];
+ readonly displayedColumns = ['name', 'cpf', 'idade', 'actions'];
 
 
  constructor(){}
